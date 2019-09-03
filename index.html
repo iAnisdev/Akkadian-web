@@ -19,149 +19,52 @@
       <title>Akkadian Network</title>
    </head>
    <body>
-      <!-- header-->
-      <nav class="navbar navbar-light bg-white bottom-shadow p-3">
-         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-            <img src="./images/akkadianLogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Akkadian Network
-            </a>
-            <div>
-               <button type="button" class="btn btn-secondary btn-invest">Invest Now</button>
-            </div>
-         </div>
-      </nav>
-      <!--Navbar -->
-      <nav class="navbar navbar-expand-sm navbar-light bg-light p-2" style="background-color: #f8f8f8">
-         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-               aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv" style="z-index: 100">
+         <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+               data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false"
+               aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">
-                        <h5 class="navbar-link">Home</h5>
-                     </a>
+            <img src="./images/akktransparent.png" alt="AKKADIAN Logo" class="akklogo">
+            <a class="navbar-brand mx-auto" href="#">AKKADIAN</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse1">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"> <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#about">
-                        <h5 class="navbar-link">About Network</h5>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">
-                        <h5 class="navbar-link">The Ecosystem</h5>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">
-                        <h5 class="navbar-link">Project Structure</h5>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#roadmap">
-                        <h5 class="navbar-link">Project Roadmap</h5>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#team">
-                        <h5 class="navbar-link">Team</h5>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">
-                        <h5 class="navbar-link">Advisors</h5>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#contact">
-                        <h5 class="navbar-link">Contact US</h5>
-                     </a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#about">What is AKKADIAN?</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="#architecture">Architecture</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="#roadmap">Project Roadmap</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="#team">TEAM</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
                </ul>
             </div>
          </div>
       </nav>
-      <!--Carousal-->
-      <div class="slider-container">
-         <div class="slider-control left inactive"></div>
-         <div class="slider-control right"></div>
-         <ul class="slider-pagi"></ul>
-         <div class="slider">
-            <div class="slide slide-0 active">
-               <div class="slide__bg"></div>
-               <div class="slide__content">
-                  <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                  </svg>
-                  <div class="slide__text">
-                     <h6 class="slide__text-heading">THE FUTURE OF DECENTRALIZED INFRASTRUCTURE NETWORK</h6>
-                     <p class="slide__text-desc">The Spiderweb foundation is set out to create a world-class
-                        decentralized shared network with shared computing ecosystem using blockchain and existing
-                        idling resources such as bandwidth, storage and computing powermesh network technologies.
-                        Spiderweb solves the cost and accessibility issues so that Internet access is no longer
-                        bounded by existing service provider’s network, we will change the way people are connected
-                     </p>
-                     <div class="row">
-                        <button type="button" class="btn btn-secondary btn-lg btn-invest p-2"><span
-                           class="p-5">INVEST NOW</span></button>
-                        <button type="button" class="btn btn-secondary btn-lg btn-deck p-2"><span
-                           class="p-4">INVESTOR’S DECK</span></button>
-                     </div>
-                  </div>
-               </div>
+      <!-- Swiper Silder
+         ================================================== -->
+      <!-- Slider main container -->
+      <div class="swiper-container main-slider" id="home">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide slider-bg-position"
+               style="background:url('https://cdn.wallpapersafari.com/93/28/4H1kNh.jpg')" data-hash="slide1">
+               <h2>The Future of Decentralized Infrastructure Network</h2>
             </div>
-            <div class="slide slide-1 ">
-               <div class="slide__bg"></div>
-               <div class="slide__content">
-                  <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                  </svg>
-                  <div class="slide__text">
-                     <h6 class="slide__text-heading">THE FUTURE OF DECENTRALIZED INFRASTRUCTURE NETWORK</h6>
-                     <p class="slide__text-desc">The Spiderweb foundation is set out to create a world-class
-                        decentralized shared network with shared computing ecosystem using blockchain and existing
-                        idling resources such as bandwidth, storage and computing powermesh network technologies.
-                        Spiderweb solves the cost and accessibility issues so that Internet access is no longer
-                        bounded by existing service provider’s network, we will change the way people are connected
-                     </p>
-                     <div class="row">
-                        <button type="button" class="btn btn-secondary btn-lg btn-invest p-2"><span
-                           class="p-5">INVEST NOW</span></button>
-                        <button type="button" class="btn btn-secondary btn-lg btn-deck p-2"><span
-                           class="p-4">INVESTOR’S DECK</span></button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="slide slide-2">
-               <div class="slide__bg"></div>
-               <div class="slide__content">
-                  <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                     <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
-                  </svg>
-                  <div class="slide__text">
-                     <h6 class="slide__text-heading">THE FUTURE OF DECENTRALIZED INFRASTRUCTURE NETWORK</h6>
-                     <p class="slide__text-desc">The Spiderweb foundation is set out to create a world-class
-                        decentralized shared network with shared computing ecosystem using blockchain and existing
-                        idling resources such as bandwidth, storage and computing powermesh network technologies.
-                        Spiderweb solves the cost and accessibility issues so that Internet access is no longer
-                        bounded by existing service provider’s network, we will change the way people are connected
-                     </p>
-                     <div class="row">
-                        <button type="button" class="btn btn-secondary btn-lg btn-invest p-2"><span
-                           class="p-5">INVEST NOW</span></button>
-                        <button type="button" class="btn btn-secondary btn-lg btn-deck p-2"><span
-                           class="p-4">INVESTOR’S DECK</span></button>
-                     </div>
-                  </div>
-               </div>
+            <div class="swiper-slide slider-bg-position"
+               style="background:url('https://freerangestock.com/sample/38979/social-media-network--world-map-with-nodes-linked-by-lines.jpg')"
+               data-hash="slide2">
+               <h2>The Future of Decentralized Infrastructure Network</h2>
             </div>
          </div>
+         <div class="swiper-slide slider-bg-position"
+            style="background:url('https://ak3.picdn.net/shutterstock/videos/5081285/thumb/9.jpg')" data-hash="slide2">
+            <h2>The Future of Decentralized Infrastructure Network</h2>
+         </div>
       </div>
-      <!--About Network-->
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+      <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
+      </div>
       <div class="container pt-5" id="about">
          <div class="row">
             <div class="col p-4">
@@ -189,8 +92,52 @@
       </div>
       </div>
       </div>
+      <!-- White Paper download-->
+      <section class="whitePaperContent pt-100">
+         <div class="pb-100">
+            <div class="layer">
+               <h1><b>Excited About US?</b></h1>
+               <div class="container pt-100 row">
+                  <button class="whitepaperButton btn-invest">Download White Paper</button>
+                  <div style="margin-left: 5vw;"><button class="whitepaperButton btn-deck">Investment Deck</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--- Architecture -->
+      <div id=architecture>
+         <div class="architecture  pt-100 pb-100">
+            <style>
+               :root {
+               --n: 4
+               }
+            </style>
+            <h1 class="architectureTitle pb-100">Project Architecture</h1>
+            <div class="arch" style="--idx: 0;">
+               <div>
+                  <h2>Application Layer</h2>
+               </div>
+            </div>
+            <div class="arch" style="--idx: 1;">
+               <div>
+                  <h2>API & Business logic Layer</h2>
+               </div>
+            </div>
+            <div class="arch" style="--idx: 2;">
+               <div>
+                  <h1>Protocol Layer</h1>
+               </div>
+            </div>
+            <div class="arch" style="--idx: 3;">
+               <div>
+                  <h1>Chian Layer</h1>
+               </div>
+            </div>
+         </div>
+      </div>
       <!-- Project Roadmap-->
-      <div style="background: #333;" id="roadmap">
+      <div style="background: #333; z-index: -1;" id="roadmap">
          <div class="container p-5">
             <header class="page-header p-5">
                <h1>Project Roadmap</h1>
@@ -338,7 +285,7 @@
          <div class="container">
             <h5 class="section-title h1">OUR TEAM</h5>
             <div class="card-columns">
-               <!-- Team member -->
+               <!-- Team member lee -->
                <div class="card">
                   <div class="mainflip">
                      <div class="frontside">
@@ -368,27 +315,7 @@
                      </div>
                   </div>
                </div>
-               <!-- Team member -->
-               <div class="card">
-                  <div class="mainflip">
-                     <div class="frontside">
-                        <div class="card">
-                           <div class="card-body text-center">
-                              <h4 class="card-title">Edwin Lam</h4>
-                              <p class="card-text" style="text-align: justify">
-                                 Edwin Laam has been living in San Francisco for the past 30 years, he is a
-                                 technologist, hacker, and an avid coder in many computer languages. He has
-                                 extensive experience in network programming, including VPN, VOIP, OperWrt,
-                                 Linux, and blockchain. He has years of experience in low-level computer
-                                 programming in operating system, protocol design, telecommunication system, AI,
-                                 mesh technology, routing, networking, and firewall.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Team member -->
+               <!-- Team member patrick -->
                <div class="card">
                   <div class="mainflip">
                      <div class="frontside">
@@ -412,7 +339,87 @@
                      </div>
                   </div>
                </div>
-               <!-- Team member -->
+               <!-- Team member hephol -->
+               <div class="card">
+                  <div class="mainflip">
+                     <div class="frontside">
+                        <div class="card">
+                           <div class="card-body text-center">
+                              <h4 class="card-title">Hephol Xing</h4>
+                              <p class="card-text" style="text-align: justify">
+                                 Hephol Xing is a technologist, blockchain capitalist, venture capitalist, and
+                                 blockchain expert. Despite her young age, she has already accumulated lots of
+                                 experience in finance and blockchain. She met Mr. LeeLee in late 2018, and
+                                 decided to become an entrepreneur, leaving her partner position at a well-known
+                                 blockchain capital company in Shanghai to join ChanLee.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Team member CheungLee-->
+               <div class="card">
+                  <div class="mainflip">
+                     <div class="frontside">
+                        <div class="card">
+                           <div class="card-body text-center">
+                              <h4 class="card-title">Dr. CheungLee Kevin</h4>
+                              <p class="card-text" style="text-align: justify">
+                                 Mr. CheungLee has received dual PhD degrees from Princeton University in
+                                 Electrical Engineering and Computer Science. He is the brother of Mr. Clement
+                                 Lee, and Hhe has previous worked at Senior V.P in engineering at PSE&G (Public
+                                 Service Electric and Gas) in New Jersey, USA. Mr. CheungLee has intense interest
+                                 in distributed computing, A.I. and distributed network.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Team member Jonathan-->
+               <div class="card">
+                  <div class="mainflip">
+                     <div class="frontside">
+                        <div class="card">
+                           <div class="card-body text-center">
+                              <h4 class="card-title">Dr. Jonathan Bernstein</h4>
+                              <p class="card-text" style="text-align: justify">
+                                 Mr. Bernstein has earned his PhD degree in telecommunication from MIT. He has
+                                 been doing research in protocol design, radio wave communication; wireless mesh
+                                 network, routing methods, and how to apply artificial intelligence to wireless
+                                 communication for many years. He met Lee in 2016 while working on his PhD degree
+                                 and decided to join Spiderweb. , and decided to join Plexus team to make a
+                                 difference in this world. Mr. Berstein currently residing in Boston, USA. Mr.
+                                 Berstein is an avid investor in cryptos and has intense interests in blockchain
+                                 technology.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Team member edwin-->
+               <div class="card">
+                  <div class="mainflip">
+                     <div class="frontside">
+                        <div class="card">
+                           <div class="card-body text-center">
+                              <h4 class="card-title">Edwin Lam</h4>
+                              <p class="card-text" style="text-align: justify">
+                                 Edwin Laam has been living in San Francisco for the past 30 years, he is a
+                                 technologist, hacker, and an avid coder in many computer languages. He has
+                                 extensive experience in network programming, including VPN, VOIP, OperWrt,
+                                 Linux, and blockchain. He has years of experience in low-level computer
+                                 programming in operating system, protocol design, telecommunication system, AI,
+                                 mesh technology, routing, networking, and firewall.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Team member luthra-->
                <div class="card">
                   <div class="mainflip">
                      <div class="frontside">
@@ -441,67 +448,7 @@
                      </div>
                   </div>
                </div>
-               <!-- Team member -->
-               <div class="card">
-                  <div class="mainflip">
-                     <div class="frontside">
-                        <div class="card">
-                           <div class="card-body text-center">
-                              <h4 class="card-title">Hephol Xing</h4>
-                              <p class="card-text" style="text-align: justify">
-                                 Hephol Xing is a technologist, blockchain capitalist, venture capitalist, and
-                                 blockchain expert. Despite her young age, she has already accumulated lots of
-                                 experience in finance and blockchain. She met Mr. LeeLee in late 2018, and
-                                 decided to become an entrepreneur, leaving her partner position at a well-known
-                                 blockchain capital company in Shanghai to join ChanLee.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Team member -->
-               <div class="card">
-                  <div class="mainflip">
-                     <div class="frontside">
-                        <div class="card">
-                           <div class="card-body text-center">
-                              <h4 class="card-title">Dr. Jonathan Bernstein</h4>
-                              <p class="card-text" style="text-align: justify">
-                                 Mr. Bernstein has earned his PhD degree in telecommunication from MIT. He has
-                                 been doing research in protocol design, radio wave communication; wireless mesh
-                                 network, routing methods, and how to apply artificial intelligence to wireless
-                                 communication for many years. He met Lee in 2016 while working on his PhD degree
-                                 and decided to join Spiderweb. , and decided to join Plexus team to make a
-                                 difference in this world. Mr. Berstein currently residing in Boston, USA. Mr.
-                                 Berstein is an avid investor in cryptos and has intense interests in blockchain
-                                 technology.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Team member -->
-               <div class="card">
-                  <div class="mainflip">
-                     <div class="frontside">
-                        <div class="card">
-                           <div class="card-body text-center">
-                              <h4 class="card-title">Dr. CheungLee Kevin</h4>
-                              <p class="card-text" style="text-align: justify">
-                                 Mr. CheungLee has received dual PhD degrees from Princeton University in
-                                 Electrical Engineering and Computer Science. He is the brother of Mr. Clement
-                                 Lee, and Hhe has previous worked at Senior V.P in engineering at PSE&G (Public
-                                 Service Electric and Gas) in New Jersey, USA. Mr. CheungLee has intense interest
-                                 in distributed computing, A.I. and distributed network.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Team member -->
+               <!-- Team member Hakobyan-->
                <div class="card">
                   <div class="mainflip">
                      <div class="frontside">
@@ -524,8 +471,8 @@
       </section>
       <!-- Team -->
       <!--Contact US-->
-      <section class="contact pt-100 pb-100" id="contact">
-         <div class="container">
+      <section class="contact pt-100" id="contact">
+         <div class="container pb-100">
             <div class="row">
                <div class="col-xl-6 mx-auto text-center">
                   <div class="section-title mb-100">
@@ -547,8 +494,7 @@
                            <input type="text" id="contact_subject" placeholder="subject" required>
                         </div>
                         <div class="col-xl-12">
-                           <textarea placeholder="message" id="contact_message" cols="30" rows="10"
-                              required></textarea>
+                           <textarea placeholder="message" id="contact_message" cols="30" rows="10" required></textarea>
                            <input type="submit" value="send message">
                         </div>
                      </div>
@@ -556,7 +502,9 @@
                </div>
                <div class="col-md-4">
                   <div class="single-contact">
-                     <img src="https://www.carewellurgentcare.com/wp-content/uploads/2016/09/blue-location-icon-Location_marker_pin_map_gps.png" alt="icon" class="imgIcon">
+                     <img
+                        src="https://www.carewellurgentcare.com/wp-content/uploads/2016/09/blue-location-icon-Location_marker_pin_map_gps.png"
+                        alt="icon" class="imgIcon">
                      <h5>Address</h5>
                      <p>661 Lefferts, NY 11203, USA</p>
                   </div>
@@ -568,8 +516,8 @@
                </div>
             </div>
          </div>
+         <!--Contact US-->
       </section>
-      <!--Contact US-->
       <!-- footer -->
       <div class="footer">
          <div class="container">
@@ -632,8 +580,8 @@
             <div class="row ">
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
                   <div class="tiny-footer">
-                     <p>Copyright © All Rights Reserved 2019 | by <a href="/" target="_blank"
-                        class="copyrightlink"><b class="akkLink">Akkadian Network</b></a></p>
+                     <p>Copyright © All Rights Reserved 2019 | by <a href="/" target="_blank" class="copyrightlink"><b
+                        class="akkLink">Akkadian Network</b></a></p>
                   </div>
                </div>
                <!-- /. tiny-footer -->
@@ -642,15 +590,15 @@
       </div>
       <!-- /.footer -->
       <!-- Scripts -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-         crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.0.0.min.js" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
          crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
          crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <script src="./scripts/swiper.min.js"></script>
       <script src="./scripts/index.js"></script>
    </body>
 </html>

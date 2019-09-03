@@ -1,126 +1,167 @@
-$(document).ready(function() {
+/*------- Smooth Scroll -------*/
+$('a[href^="#"]').on('click', function(event) {
 
-    var $slider = $(".slider"),
-        $slideBGs = $(".slide__bg"),
-        diff = 0,
-        curSlide = 0,
-        numOfSlides = $(".slide").length - 1,
-        animating = false,
-        animTime = 500,
-        autoSlideTimeout,
-        autoSlideDelay = 6000,
-        $pagination = $(".slider-pagi");
-
-    function createBullets() {
-        for (var i = 0; i < numOfSlides + 1; i++) {
-            var $li = $("<li class='slider-pagi__elem'></li>");
-            $li.addClass("slider-pagi__elem-" + i).data("page", i);
-            if (!i) $li.addClass("active");
-            $pagination.append($li);
-        }
-    };
-
-    createBullets();
-
-    function manageControls() {
-        $(".slider-control").removeClass("inactive");
-        if (!curSlide) $(".slider-control.left").addClass("inactive");
-        if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
-    };
-
-    function autoSlide() {
-        autoSlideTimeout = setTimeout(function() {
-            curSlide++;
-            if (curSlide > numOfSlides) curSlide = 0;
-            changeSlides();
-        }, autoSlideDelay);
-    };
-
-    autoSlide();
-
-    function changeSlides(instant) {
-        if (!instant) {
-            animating = true;
-            manageControls();
-            $slider.addClass("animating");
-            $slider.css("top");
-            $(".slide").removeClass("active");
-            $(".slide-" + curSlide).addClass("active");
-            setTimeout(function() {
-                $slider.removeClass("animating");
-                animating = false;
-            }, animTime);
-        }
-        window.clearTimeout(autoSlideTimeout);
-        $(".slider-pagi__elem").removeClass("active");
-        $(".slider-pagi__elem-" + curSlide).addClass("active");
-        $slider.css("transform", "translate3d(" + -curSlide * 100 + "%,0,0)");
-        $slideBGs.css("transform", "translate3d(" + curSlide * 50 + "%,0,0)");
-        diff = 0;
-        autoSlide();
+    var target = $($(this).attr('href'));
+    console.log(target)
+    if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
     }
-
-    function navigateLeft() {
-        if (animating) return;
-        if (curSlide > 0) curSlide--;
-        changeSlides();
-    }
-
-    function navigateRight() {
-        if (animating) return;
-        if (curSlide < numOfSlides) curSlide++;
-        changeSlides();
-    }
-
-    $(document).on("mousedown touchstart", ".slider", function(e) {
-        if (animating) return;
-        window.clearTimeout(autoSlideTimeout);
-        var startX = e.pageX || e.originalEvent.touches[0].pageX,
-            winW = $(window).width();
-        diff = 0;
-
-        $(document).on("mousemove touchmove", function(e) {
-            var x = e.pageX || e.originalEvent.touches[0].pageX;
-            diff = (startX - x) / winW * 70;
-            if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
-            $slider.css("transform", "translate3d(" + (-curSlide * 100 - diff) + "%,0,0)");
-            $slideBGs.css("transform", "translate3d(" + (curSlide * 50 + diff / 2) + "%,0,0)");
-        });
-    });
-
-    $(document).on("mouseup touchend", function(e) {
-        $(document).off("mousemove touchmove");
-        if (animating) return;
-        if (!diff) {
-            changeSlides(true);
-            return;
-        }
-        if (diff > -8 && diff < 8) {
-            changeSlides();
-            return;
-        }
-        if (diff <= -8) {
-            navigateLeft();
-        }
-        if (diff >= 8) {
-            navigateRight();
-        }
-    });
-
-    $(document).on("click", ".slider-control", function() {
-        if ($(this).hasClass("left")) {
-            navigateLeft();
-        } else {
-            navigateRight();
-        }
-    });
-
-    $(document).on("click", ".slider-pagi__elem", function() {
-        curSlide = $(this).data("page");
-        changeSlides();
-    });
 
 });
+
+
+
+/*------- Swiper Slider -------*/
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    paginationClickable: true,
+    centeredSlides: true,
+    autoplay: 3500,
+    speed: 1500,
+    loop: true,
+    autoplayDisableOnInteraction: false
+});
+
+
+
+var ScrollPosStyler = (function(document, window) {
+    "use strict";
+
+    /* ====================
+     * private variables
+     * ==================== */
+    var scrollPosY = 0,
+        busy = false,
+        onTop = true,
+
+        // toggle style / class when scrolling below this position (in px)
+        scrollOffsetY = 1,
+
+        // choose elements to apply style / class to
+        elements = document.getElementsByClassName("sps");
+
+
+    /* ====================
+     * private funcion to check scroll position
+     * ==================== */
+    function onScroll() {
+        // ensure that events don't stack
+        if (!busy) {
+            // get current scroll position from window
+            scrollPosY = window.pageYOffset;
+
+            // if we were above, and are now below scroll position...
+            if (onTop && scrollPosY > scrollOffsetY) {
+                // suspend accepting scroll events
+                busy = true;
+
+                // remember that we are below scroll position
+                onTop = false;
+
+                // asynchronuously add style / class to elements
+                window.requestAnimationFrame(belowScrollPos);
+
+                // if we were below, and are now above scroll position...
+            } else if (!onTop && scrollPosY <= scrollOffsetY) {
+                // suspend accepting scroll events
+                busy = true;
+
+                // remember that we are above scroll position
+                onTop = true;
+
+                // asynchronuously add style / class to elements
+                window.requestAnimationFrame(aboveScrollPos);
+            }
+        }
+    }
+
+
+    /* ====================
+     * private function to style elements when above scroll position
+     * ==================== */
+    function aboveScrollPos() {
+        // iterate over elements
+        // for (var elem of elements) {
+        for (var i = 0; elements[i]; ++i) { // chrome workaround
+            // add style / class to element
+            elements[i].classList.add("sps--abv");
+            elements[i].classList.remove("sps--blw");
+        }
+
+        // resume accepting scroll events
+        busy = false;
+    }
+
+    /* ====================
+     * private function to style elements when below scroll position
+     * ==================== */
+    function belowScrollPos() {
+        // iterate over elements
+        // for (var elem of elements) {
+        for (var i = 0; elements[i]; ++i) { // chrome workaround
+            // add style / class to element
+            elements[i].classList.add("sps--blw");
+            elements[i].classList.remove("sps--abv");
+        }
+
+        // resume accepting scroll events
+        busy = false;
+    }
+
+
+    /* ====================
+     * public function to initially style elements based on scroll position
+     * ==================== */
+    var pub = {
+        init: function() {
+            // suspend accepting scroll events
+            busy = true;
+
+            // get current scroll position from window
+            scrollPosY = window.pageYOffset;
+
+            // if we are below scroll position...
+            if (scrollPosY > scrollOffsetY) {
+                // remember that we are below scroll position
+                onTop = false;
+
+                // asynchronuously add style / class to elements
+                window.requestAnimationFrame(belowScrollPos);
+
+                // if we are above scroll position...
+            } else { // (scrollPosY <= scrollOffsetY)
+                // remember that we are above scroll position
+                onTop = true;
+
+                // asynchronuously add style / class to elements
+                window.requestAnimationFrame(aboveScrollPos);
+            }
+        }
+    };
+
+
+    /* ====================
+     * main initialization
+     * ==================== */
+    // add initial style / class to elements when DOM is ready
+    document.addEventListener("DOMContentLoaded", function() {
+        // defer initialization to allow browser to restore scroll position
+        window.setTimeout(pub.init, 1);
+    });
+
+    // register for window scroll events
+    window.addEventListener("scroll", onScroll);
+
+
+    return pub;
+})(document, window);
+
+
 
 var $element = $('.each-event, .title');
 var $window = $(window);
@@ -146,6 +187,9 @@ function check_for_fade() {
 
 $('#subscribe').submit(function(e) {
     let email = $('#subscribeEmail').val()
+    console.log('subscribe form submitted ', {
+        email
+    })
     e.preventDefault();
 });
 
